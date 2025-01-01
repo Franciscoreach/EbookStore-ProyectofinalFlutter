@@ -124,7 +124,7 @@ class ReadingPageState extends State<ReadingPage> {
       stars.add(
         Icon(
           i < rating ? Icons.star : Icons.star_border,
-          color: AppColor.orange,
+          color: AppColor.yellow,
           size: 20,
         ),
       );

@@ -198,8 +198,8 @@ class _BodyState extends State<Body> {
                           decoration: BoxDecoration(
                             color: AppColor.greenBlack,
                             borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(16),
-                              topRight: Radius.circular(16),
+                              topLeft: Radius.circular(22),
+                              topRight: Radius.circular(22),
                             ),
                           ),
                           child: Column(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyectofinal/model/product_model.dart';
 import 'package:proyectofinal/pages/bloc/ebook_bloc.dart';
+import 'package:proyectofinal/pages/detailbook_page.dart';
 import 'package:proyectofinal/widgets/app_colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -55,15 +56,30 @@ class CartBody extends StatelessWidget {
     );
   }
 
-  Widget _buildListItem(BuildContext context, ProductModel product) {
-    return Container(
+Widget _buildListItem(BuildContext context, ProductModel product) {
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => DetailBookPage(
+            product: product,
+            title: product.name,
+            author: product.autor,
+            imageUrl: product.imageUrl,
+            price: '\$${product.price}',
+          ),
+        ),
+      );
+    },
+    child: Container(
       height: 180,
       padding: const EdgeInsets.all(8),
       child: Row(
         children: [
           Container(
             width: 100,
-            height: 180, 
+            height: 180,
             decoration: BoxDecoration(
               color: AppColor.greyBackground,
               borderRadius: BorderRadius.circular(16),
@@ -124,7 +140,9 @@ class CartBody extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              context.read<EbookBloc>().add(RemoveFavoriteProductEvent(product: product));
+              context
+                  .read<EbookBloc>()
+                  .add(RemoveFavoriteProductEvent(product: product));
             },
             icon: Icon(
               Icons.bookmark,
@@ -134,6 +152,7 @@ class CartBody extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
