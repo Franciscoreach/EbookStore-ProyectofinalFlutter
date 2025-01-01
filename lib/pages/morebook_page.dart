@@ -10,7 +10,6 @@ class MoreBookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Asegúrate de que los productos estén cargados cuando se navega a esta página
     if (context.read<EbookBloc>().state.products.isEmpty) {
       context.read<EbookBloc>().add(LoadAllProductsEvent());
     }
@@ -86,13 +85,13 @@ class BookItem extends StatelessWidget {
   final ProductModel product;
 
   const BookItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.author,
     required this.screenWidth,
     required this.product,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

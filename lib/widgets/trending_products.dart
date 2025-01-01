@@ -56,7 +56,7 @@ class TrendingProducts extends StatelessWidget {
               final trendingProducts = state.trendingProducts;
 
               if (trendingProducts.isEmpty) {
-                return const Center(child: Text('No hay productos trending'));
+                return const Center(child: Text('No trending books found'));
               }
 
               return SizedBox(
@@ -125,9 +125,8 @@ class TrendingProducts extends StatelessWidget {
               );
             }
 
-            // Caso de error
             if (state.homeScreenState == HomeScreenState.failure) {
-              return const Center(child: Text('Error al cargar los productos.'));
+              return const Center(child: Text('Error loading books'));
             }
 
             return const SizedBox();

@@ -51,7 +51,7 @@ class _AddProductPageState extends State<AddProductPage> {
 
     if (name.isEmpty || autor.isEmpty || price.isEmpty || imageUrl.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Todos los campos son requeridos.')),
+        const SnackBar(content: Text('All fields are required')),
       );
       return;
     }
@@ -74,7 +74,7 @@ class _AddProductPageState extends State<AddProductPage> {
     }
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Producto guardado exitosamente.')),
+      const SnackBar(content: Text('Product saved successfully')),
     );
 
     _nameController.clear();

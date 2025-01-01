@@ -188,7 +188,6 @@ class DetailBookPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              // Descripción del libro
               const Text(
                 'Gallery West Residence is an apartment that is part of the ARK Gallery West mixed-use complex that is integrated with office...',
                 style: TextStyle(fontSize: 14, color: Colors.black54),
@@ -243,7 +242,6 @@ class DetailBookPage extends StatelessWidget {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    // Limitar cantidad a 5
                                     if (productQty < 5) {
                                       context.read<EbookBloc>().add(
                                         UpdateCartQuantityEvent(
@@ -284,7 +282,7 @@ class DetailBookPage extends StatelessWidget {
                                 },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColor.orange,
-                            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 28),
+                            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),

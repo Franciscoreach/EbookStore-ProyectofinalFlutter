@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyectofinal/pages/bloc/ebook_bloc.dart';
 import 'package:proyectofinal/pages/cart_page.dart';
 import 'package:proyectofinal/pages/maintainer_page.dart';
-import 'package:proyectofinal/pages/detailbook_page.dart'; // Asegúrate de importar la página de detalles
+import 'package:proyectofinal/pages/detailbook_page.dart';
 import 'package:proyectofinal/widgets/app_colors.dart';
 import 'package:proyectofinal/widgets/trending_products.dart';
 

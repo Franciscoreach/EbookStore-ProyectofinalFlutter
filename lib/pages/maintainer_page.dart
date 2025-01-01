@@ -42,10 +42,11 @@ class MaintainerBody extends StatelessWidget {
               final result = await Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddProductPage(),
+                  builder: (context) => const AddProductPage(),
                 ),
               );
               if (result != null && result) {
+                // ignore: use_build_context_synchronously
                 context.read<EbookBloc>().add(LoadAllProductsEvent());
               }
             },
@@ -177,6 +178,7 @@ class MaintainerBody extends StatelessWidget {
                   );
 
                   if (result != null && result) {
+                    // ignore: use_build_context_synchronously
                     context.read<EbookBloc>().add(LoadAllProductsEvent());
                   }
                 },

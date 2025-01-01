@@ -47,7 +47,6 @@ class CartPage extends StatelessWidget {
             );
           }
 
-          // Calcular el precio total del carrito
           final totalPrice = state.cart.fold<double>(
             0.0,
             (sum, item) => sum + (item.price * item.quantity),
@@ -61,7 +60,7 @@ class CartPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Total',
+                      'Total price: ',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -95,7 +94,7 @@ class CartPage extends StatelessWidget {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    final cartItems = state.cart;  // Obtienes los productos del carrito
+                    final cartItems = state.cart;
                     context.read<EbookBloc>().add(CheckoutEvent(cartItems: cartItems));
                   },
                   style: ElevatedButton.styleFrom(
