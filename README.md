@@ -20,5 +20,7 @@ formularios, e imágenes.
 
 
 ### 🎯 Video del proyecto funcionando
+
+----
                 
-[----](https://youtu.be/BNFOfZeza5g)
+https://youtu.be/BNFOfZeza5g
