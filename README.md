@@ -1,16 +1,26 @@
-# proyectofinal
+# Proyecto Final de Flutter "Ebook Store"
 
-A new Flutter project.
+ ![](https://img.shields.io/badge/release-1.0.0-green) ![](https://img.shields.io/badge/issues-0%20open-red) 
 
-## Getting Started
+###  ℹ️ Objetivo principal del proyecto
 
-This project is a starting point for a Flutter application.
+Integrar los conocimientos de Flutter (widgets, BLoC), Firebase (Dio), CRUD, favoritos (bookmark), carrito, 
+formularios, e imágenes.
+----
 
-A few resources to get you started if this is your first Flutter project:
+### 🎯 Objetivos
+                
+----
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- ✅ Visualizar una lista de libros con su título, autor, precio e imagen de portada.
+- ✅ Agregar libros a un carrito y modificar sus cantidades (para simular una compra).
+- ✅ Crear o editar libros, simulando la función de administrador o mantenedor.
+- ✅ Marcar libros como favoritos para encontrarlos rápidamente en otra sección.
+- ✅ Cargar/mostrar imágenes de cada libro (portada).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### 🎯 Video del proyecto funcionando
+
+----
+                
+https://youtu.be/BNFOfZeza5g
