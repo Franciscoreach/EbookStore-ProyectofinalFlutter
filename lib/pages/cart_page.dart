@@ -184,11 +184,11 @@ class CartPage extends StatelessWidget {
                           IconButton(
                             onPressed: () {
                               context.read<EbookBloc>().add(
-                                    UpdateCartQuantityEvent(
-                                      product: product,
-                                      newQty: -1,
-                                    ),
-                                  );
+                                UpdateCartQuantityEvent(
+                                  product: product,
+                                  newQty: -1,
+                                ),
+                              );
                             },
                             icon: Icon(
                               Icons.remove,
@@ -204,16 +204,18 @@ class CartPage extends StatelessWidget {
                           ),
                           IconButton(
                             onPressed: () {
-                              context.read<EbookBloc>().add(
-                                    UpdateCartQuantityEvent(
-                                      product: product,
-                                      newQty: 1,
-                                    ),
-                                  );
+                              if (product.quantity < 5) {
+                                context.read<EbookBloc>().add(
+                                  UpdateCartQuantityEvent(
+                                    product: product,
+                                    newQty: 1,
+                                  ),
+                                );
+                              }
                             },
                             icon: Icon(
                               Icons.add,
-                              color: AppColor.black,
+                              color: product.quantity < 5 ? AppColor.black : AppColor.greyLight,
                               size: 14,
                             ),
                           ),
