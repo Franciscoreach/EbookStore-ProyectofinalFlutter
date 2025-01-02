@@ -96,6 +96,24 @@ class CartPage extends StatelessWidget {
                   onPressed: () {
                     final cartItems = state.cart;
                     context.read<EbookBloc>().add(CheckoutEvent(cartItems: cartItems));
+
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Successful Payment'),
+                          content: const Text('Your products will be found in the "reading" section'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Close'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColor.orange,

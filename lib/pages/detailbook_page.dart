@@ -56,6 +56,51 @@ class DetailBookPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    price,
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.greenBlack,
+                    ),
+                  ),
+                  BlocBuilder<EbookBloc, EbookState>(
+                    builder: (context, state) {
+                      final isFavorited = state.favoriteProducts
+                          .any((favProduct) => favProduct.id == product.id);
+                      return GestureDetector(
+                        onTap: () {
+                          if (isFavorited) {
+                            context.read<EbookBloc>().add(
+                              RemoveFavoriteProductEvent(product: product),
+                            );
+                          } else {
+                            context.read<EbookBloc>().add(
+                              AddFavoriteProductEvent(product: product),
+                            );
+                          }
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: isFavorited ? AppColor.greenBlack : AppColor.greyLight,
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: Icon(
+                            isFavorited ? Icons.bookmark_added : Icons.bookmark,
+                            color: Colors.white,
+                            size: 22,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 4),
               Text(
                 title,
                 style: TextStyle(
